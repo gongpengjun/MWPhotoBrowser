@@ -21,6 +21,7 @@
 @property (nonatomic) id <MWPhoto> photo;
 @property (nonatomic, weak) MWCaptionView *captionView;
 @property (nonatomic, weak) UIButton *selectedButton;
+@property () CGFloat initialZoomScale;
 
 - (id)initWithPhotoBrowser:(MWPhotoBrowser *)browser;
 - (void)displayImage;

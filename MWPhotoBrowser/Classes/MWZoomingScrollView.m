@@ -266,6 +266,7 @@
     
     // Initial zoom
     self.zoomScale = [self initialZoomScaleWithMinScale];
+    self.initialZoomScale = self.zoomScale;
     
     // If we're zooming to fill then centralise
     if (self.zoomScale != minScale) {
