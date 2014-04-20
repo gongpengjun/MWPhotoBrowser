@@ -1061,6 +1061,18 @@
 	[self updateNavigation];
 }
 
+- (void)scrollViewWillBeginZooming:(UIScrollView *)scrollView withView:(UIView *)view {
+    // Do noting, just for subclass
+}
+
+- (void)scrollViewDidZoom:(UIScrollView *)scrollView {
+    // Do noting, just for subclass
+}
+
+- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(CGFloat)scale {
+    // Do noting, just for subclass
+}
+
 #pragma mark - Navigation
 
 - (void)updateNavigation {

@@ -341,7 +341,23 @@
 - (void)scrollViewWillBeginZooming:(UIScrollView *)scrollView withView:(UIView *)view {
     self.scrollEnabled = YES; // reset
 	[_photoBrowser cancelControlHiding];
+    if([_photoBrowser respondsToSelector:@selector(scrollViewWillBeginZooming:withView:)]) {
+        [_photoBrowser scrollViewWillBeginZooming:scrollView withView:view];
+    }
 }
+
+- (void)scrollViewDidZoom:(UIScrollView *)scrollView {
+    if([_photoBrowser respondsToSelector:@selector(scrollViewDidZoom:)]) {
+        [_photoBrowser scrollViewDidZoom:scrollView];
+    }
+}
+
+- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(CGFloat)scale {
+    if([_photoBrowser respondsToSelector:@selector(scrollViewDidEndZooming:withView:atScale:)]) {
+        [_photoBrowser scrollViewDidEndZooming:scrollView withView:view atScale:scale];
+    }
+}
+
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
 	[_photoBrowser hideControlsAfterDelay];
